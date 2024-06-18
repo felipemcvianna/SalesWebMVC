@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <Compile Remove="Views\Home\Teste.cshtml.cs" />
+      <Compile Remove="Models\Enumables\SaleStatus.cs" />
     </ItemGroup>
 
     <ItemGroup>
