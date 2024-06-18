@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SalesWeb.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SalesWebContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("SalesWebContext"),
+        new MySqlServerVersion(new Version(8, 0, 37))));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -17,8 +23,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
