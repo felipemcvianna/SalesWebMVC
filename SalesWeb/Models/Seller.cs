@@ -15,13 +15,13 @@ public class Seller
         
     }
 
-    public Seller(int id, string nome, string email, double salario, DateTime birthDate, Department department)
+    public Seller(int id, string nome, string email,  DateTime birthDate, double salario, Department department)
     {
         Id = id;
         Nome = nome;
         Email = email;
-        Salario = salario;
         BirthDate = birthDate;
+        Salario = salario;
         Department = department;    
     }
 
